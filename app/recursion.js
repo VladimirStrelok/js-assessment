@@ -40,21 +40,14 @@ exports.recursionAnswers = {
 
   fibonacci: function(n) {
 
-    var fib = function(targetPerm, perm, a, b){
-      if(targetPerm == 1 || targetPerm == 2){
-        return 1
-      }
-      if(targetPerm <= perm){
-        return a
-      }
-      perm = perm || 1;
-      a = a || 1;
-      b = b || 1;
-      return fib(targetPerm,perm + 1, b, a+b)
+    function fib(n){
 
+      if( n == 1 || n == 2){
+        return 1;
+      }
+      else return fib(n-1) + fib(n-2)
     }
     return fib(n)
-
   },
 
   validParentheses: function(n) {
