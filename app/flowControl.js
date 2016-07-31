@@ -10,6 +10,21 @@ exports.flowControlAnswers = {
     //
     // otherwise the function should return the number, or false if no number
     // was provided or the value provided is not a number
+    if(typeof num != "number"){
+      return false;
+    }
+    if(num%3 == 0 || num%5 == 0){
+      var toReturn = ""
+      if(num%3 == 0){
+        toReturn = toReturn + "fizz"
+      }
+      if(num%5 == 0){
+        toReturn = toReturn + "buzz"
+      }
+      return toReturn;
+    }
+    return num
+
 
   }
 };
